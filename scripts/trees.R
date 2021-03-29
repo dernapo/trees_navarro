@@ -3,14 +3,12 @@
 ## https://github.com/djnavarro/flametree
 ##########################################################################################
 
-
 # install.packages("devtools")
 #devtools::install_github("djnavarro/flametree")
 
 pacman::p_load(here, ggplot2, flametree, magrittr, patchwork)
 
 ## Functions --------------------------------------------------------------------------------
-
 generating_trees <- function(time, seed) {
   flametree_grow(time, seed) %>%
     flametree_plot()
@@ -36,14 +34,13 @@ trees_list_fix <- mapply(
   SIMPLIFY = FALSE
 )
 
-
 plot_list_fix <- wrap_plots(trees_list_fix)
 
 ggsave(plot =  plot_list_fix, 
        here("output", paste0("tree_moving", format(Sys.time(), "_%Y%m%d_%H%M"),".png")),
        width = 12, height = 12)
 
-## Tree clock  ----------------------------------------------------------------------------
+## Trees clock (not yet there)  -------------------------------------------------------------
 
 layout <- '
 ###A###
